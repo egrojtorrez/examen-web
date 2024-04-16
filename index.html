@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="view-transition" content="same-origin">
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="mb-4 header">
+      <div class="header-inner u-center">
+        <a id="logo" href="/index.html"> <img src="img/egrojtorrezlogo.png" alt="" /> </a>
+        <nav id="nav">
+          <div>
+            <div id="hits">
+              <div class="ais-Hits">
+                <ol class="ais-Hits-list"></ol>
+              </div>
+            </div>
+          </div>
+          <a
+            href="https://www.linkedin.com/in/egrojtorrez/"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            <img src="img/linkedin.svg" alt="linkedin-logo" />
+          </a>
+          <a
+            href="https://github.com/egrojtorrez"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            <img src="/img/github.svg" alt="github-logo" />
+          </a>
+          <a
+            href="https://www.instagram.com/egrojtorrez/"
+            target="_blank"
+            rel="noopener nofollow"
+            aria-label="Sígueme en Instagram"
+          >
+            <img src="/img/insta.svg" alt="logo-insta" />
+          </a>
+        </nav>
+      </div>
+    </header>
+    <div class="body u-center">
+      <section>
+        <div class="container">
+          <h1 class="title">Presentación</h1>
+          <p class="description">
+            Hola, soy Jorge Torres, estudiante de la carrera de Ingeniería en
+            Desarrollo de Software y Tecnologias Emergentes en la Universidad
+            Autonoma de Baja California.
+          </p>
+        </div>
+      </section>
+      <section class="section-posts">
+        <a
+          class="home-article"
+          href=""
+        >
+          <picture>
+            <img
+              decoding="async"
+              alt="Imagen de la etiqueta javascript"
+              src="/img/javascript.png"
+              width="48"
+              height="48"
+            />
+          </picture>
+
+          <div>
+            <h2>Como funciona el asincronismo en javascript </h2>
+            <div class="meta">
+              <time> 15 abril 2024 </time>
+            </div>
+          </div>
+        </a>
+        <a
+          class="home-article"
+          href="/prueba.html"
+        >
+          <picture>
+            <img
+              decoding="async"
+              alt="imagen de sql"
+              src="/img/sql.png"
+              width="48"
+              height="48"
+            />
+          </picture>
+
+          <div>
+            <h2>dbdiagram.io una de las mejores herramientas para diseñar bases de datos </h2>
+            <div class="meta">
+              <time> 15 abril 2024 </time>
+            </div>
+          </div>
+        </a>
+        <a
+        class="home-article"
+        href=""
+      >
+        <picture>
+          <img
+            decoding="async"
+            alt="Imagen de la etiqueta javascript"
+            src="/img/Typescript.svg"
+            width="48"
+            height="48"
+          />
+        </picture>
+
+        <div>
+          <h2>Como extender el Request de expres al usar Typescript</h2>
+          <div class="meta">
+            <time> 15 abril 2024 </time>
+          </div>
+        </div>
+      </a>
+      <a
+        class="home-article"
+        href=""
+      >
+        <picture>
+          <img
+            decoding="async"
+            alt="Imagen de la etiqueta css"
+            src="/img/css-icon.svg"
+            width="48"
+            height="48"
+          />
+        </picture>
+
+        <div>
+          <h2>View Transition como aplicarlas en un proyecto basico</h2>
+          <div class="meta">
+            <time> 15 abril 2024 </time>
+          </div>
+        </div>
+      </a>
+      </section>
+    </div>
+    <footer>
+      <section class="u-center">
+        <p>
+          Pagina web hecha por
+          <strong>Jorge Omar Torres Sosa - 1270900</strong> para
+          <strong> Aplicaciones Web</strong>
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>
+
+<script>
+  window.navigation.addEventListener('navigate', (e) => {
+    const toUrl = new URL(e.destination.url)
+    console.log(toUrl)
+    if (location.origin !== toUrl.origin) return
+    event.intercept({
+      async handler () {
+        const response = await fetch(toUrl.pathname)
+        const text = await response.text()
+        const data = text.match(/<body>([\s\S]*)<\/body>/)[1]
+        
+        document.startViewTransition(() => {
+          document.body.innerHTML = data
+          document.documentElement.scrollTop = 0
+        })
+      }
+    })
+  })
+</script>
