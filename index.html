@@ -5,20 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="view-transition" content="same-origin">
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/457a315592.js" crossorigin="anonymous"> </script>
+    <title>egrojtorrez</title>
   </head>
   <body>
     <header class="mb-4 header">
       <div class="header-inner u-center">
-        <a id="logo" href="index.html"> <img src="img/egrojtorrezlogo.png" alt="" /> </a>
+        <a id="logo" href="/"> 
+          <img id="logo-letras" src="img/egrojtorrezlogo.png" alt="logo" /> 
+          <img id="logo-small" src="img/logoSinLetras.png" alt="logo" /> 
+        </a>
         <nav id="nav">
-          <div>
-            <div id="hits">
-              <div class="ais-Hits">
-                <ol class="ais-Hits-list"></ol>
-              </div>
-            </div>
-          </div>
+          <a
+          href="/proyectos.html"
+          >
+            Proyectos
+          </a>
+          <a
+          href="/"
+          >
+            About Me
+          </a>
+          <a
+          href="/blog.html"
+          >
+            Blog
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main class="body u-center">
+      <section class="presentation">
+        <div class="perfil">
+          <img src="img/perfil.jpeg" alt="Profile">
+          <h2>Jorge Omar Torres Sosa</h2>
+          <h3> <span class="highlight"> @egrojtorrez</span></h3>
+        </div>
+        <div>
+          <p>👋 ¡Hola! Soy un apasionado estudiante de Ingeniería de Software en la UABC de 22 años, tengo un entusiasmo emocionante por el desarrollo de aplicaciones.</p>
+          <p>💻 Mi experiencia abarca tanto el desarrollo de front-end como de back-end, y me siento cómodo trabajando con tecnologías como <span class="highlight">React</span>, <span class="highlight">Express</span>, <span class="highlight">SQL</span>, entre otros. He tenido la oportunidad de colaborar en proyectos web desafiantes donde he contribuido a diseñar diferentes aplicaciones, cada una con su propio conjunto de desafíos y tecnologías.</p>
+          <p>🌐 En mi constante búsqueda de conocimiento, me esfuerzo por mantenerme al día con las últimas tendencias en desarrollo de software y explorar nuevas herramientas que enriquecen mi conjunto de habilidades. Estoy emocionado de continuar aprendiendo y creciendo en este campo emocionante.</p>
+        </div>
+      </section>
+      <div>
+        <h2>Mis Habilidades</h2>
+        <div class="habilidades">
+            <section class="habilidad">
+                <h3>Javascript</h3>
+                <div class="iconos"> 
+                  <img src="img/javascript.png" alt="">
+                </div>
+                <p>Dominio avanzado de JavaScript, con habilidades para implementar funcionalidades interactivas y dinámicas en sitios web. Proficiente en el manejo de eventos, manipulación del DOM, y AJAX, asegurando interfaces de usuario reactivas y eficientes.</p>
+            </section>
+            <section class="habilidad">
+                <h3>Typescript</h3>
+                <div class="iconos"> 
+                  <img src="img/Typescript.svg" alt="">
+                </div>
+                <p>Experto en TypeScript, extendiendo JavaScript para añadir tipado estático y objetos basados en clases. Uso de TypeScript para mejorar la mantenibilidad y escalabilidad del código, facilitando la gestión de proyectos grandes y complejos con mayor seguridad y eficiencia en el desarrollo.</p>
+            </section>
+            <section class="habilidad">
+                <h3>Bases de Datos SQL</h3>
+                <div class="iconos">
+                  <img src="img/sql.png" alt="">
+                </div>
+                <p>Amplia experiencia en el diseño y gestión de bases de datos SQL. Capacidad para crear estructuras de datos optimizadas, realizar consultas complejas y manejar transacciones. Especializado en garantizar la integridad, seguridad y rendimiento de los datos en aplicaciones web.</p>
+            </section>
+        </div>
+    </div>     
+    </main>
+    <footer>
+      <section class="u-center">
+        <p>
+          Pagina web hecha por
+          <strong>Jorge Omar Torres Sosa - 1270900</strong> para
+          <strong> Aplicaciones Web</strong>
+        </p>
+        <div>
           <a
             href="https://www.linkedin.com/in/egrojtorrez/"
             target="_blank"
@@ -41,114 +104,7 @@
           >
             <img src="img/insta.svg" alt="logo-insta" />
           </a>
-        </nav>
-      </div>
-    </header>
-    <div class="body u-center">
-      <section>
-        <div class="container">
-          <h1 class="title">Presentación</h1>
-          <p class="description">
-            Hola, soy Jorge Torres, estudiante de la carrera de Ingeniería en
-            Desarrollo de Software y Tecnologias Emergentes en la Universidad
-            Autonoma de Baja California.
-          </p>
         </div>
-      </section>
-      <section class="section-posts">
-        <a
-          class="home-article"
-          href=""
-        >
-          <picture>
-            <img
-              decoding="async"
-              alt="Imagen de la etiqueta javascript"
-              src="img/javascript.png"
-              width="48"
-              height="48"
-            />
-          </picture>
-
-          <div>
-            <h2>Como funciona el asincronismo en javascript </h2>
-            <div class="meta">
-              <time> 15 abril 2024 </time>
-            </div>
-          </div>
-        </a>
-        <a
-          class="home-article"
-          href="prueba.html"
-        >
-          <picture>
-            <img
-              decoding="async"
-              alt="imagen de sql"
-              src="img/sql.png"
-              width="48"
-              height="48"
-            />
-          </picture>
-
-          <div>
-            <h2>dbdiagram.io una de las mejores herramientas para diseñar bases de datos </h2>
-            <div class="meta">
-              <time> 15 abril 2024 </time>
-            </div>
-          </div>
-        </a>
-        <a
-        class="home-article"
-        href=""
-      >
-        <picture>
-          <img
-            decoding="async"
-            alt="Imagen de la etiqueta javascript"
-            src="img/Typescript.svg"
-            width="48"
-            height="48"
-          />
-        </picture>
-
-        <div>
-          <h2>Como extender el Request de expres al usar Typescript</h2>
-          <div class="meta">
-            <time> 15 abril 2024 </time>
-          </div>
-        </div>
-      </a>
-      <a
-        class="home-article"
-        href=""
-      >
-        <picture>
-          <img
-            decoding="async"
-            alt="Imagen de la etiqueta css"
-            src="img/css-icon.svg"
-            width="48"
-            height="48"
-          />
-        </picture>
-
-        <div>
-          <h2>View Transition como aplicarlas en un proyecto basico</h2>
-          <div class="meta">
-            <time> 15 abril 2024 </time>
-          </div>
-        </div>
-      </a>
-      </section>
-    </div>
-    <footer>
-      <section class="u-center">
-        <p>
-          Pagina web hecha por
-          <strong>Jorge Omar Torres Sosa - 1270900</strong> para
-          <strong> Aplicaciones Web</strong>
-        </p>
       </section>
     </footer>
   </body>

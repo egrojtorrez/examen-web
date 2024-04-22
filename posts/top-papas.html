@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="view-transition" content="same-origin">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://kit.fontawesome.com/457a315592.js" crossorigin="anonymous"> </script>
+    <title>egrojtorrez</title>
+  </head>
+  <body>
+    <header class="mb-4 header">
+      <div class="header-inner u-center">
+        <a id="logo" href="/"> 
+          <img id="logo-letras" src="/img/egrojtorrezlogo.png" alt="logo" /> 
+          <img id="logo-small" src="/img/logoSinLetras.png" alt="logo" /> 
+        </a>
+        <nav id="nav">
+          <a
+          href="/proyectos.html"
+          >
+            Proyectos
+          </a>
+          <a
+          href="/"
+          >
+            About Me
+          </a>
+          <a
+          href="/blog.html"
+          >
+            Blog
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main class="body u-center">
+      <h1>Top Mejores Alimentos Basados en Papa</h1>
+      <section class="blog-section">
+        <h2>1. Puré de Papas</h2>
+        <img src="/img/pure-papa.webp" alt="Plato de puré de papas cremoso">
+        <p>
+            El puré de papas es un clásico confortante que acompaña perfectamente a una variedad de platos principales. Suave, cremoso y a menudo enriquecido con mantequilla y crema, es un favorito en celebraciones y cenas familiares.
+        </p>
+    </section>
+
+    <section class="blog-section">
+        <h2>2. Papas a la Francesa</h2>
+        <img src="/img/papas-fritas.webp">
+        <p>
+            ¿Quién puede resistirse a unas buenas papas a la francesa? Este snack popular es amado en todo el mundo, ideal para picar solo o como acompañamiento de hamburguesas y sándwiches. Fritas hasta lograr un exterior dorado y crujiente con un interior suave, son simplemente irresistibles.
+        </p>
+    </section>
+
+    <section class="blog-section">
+        <h2>3. Tortilla de Papas</h2>
+        <img src="/img/tortilla-papa.webp" alt="Española tortilla de papas">
+        <p>
+            La tortilla de papas, también conocida como tortilla española, es un plato versátil que se disfruta tanto en caliente como en frío. Con su combinación de papas suavemente cocidas y huevo, es común encontrarla en los menús de tapas y como una comida rápida y satisfactoria a cualquier hora.
+        </p>
+    </section>
+
+    <section class="blog-section">
+        <h2>4. Gnocchi de Papa</h2>
+        <img src="/img/gnocchi-papa.jpeg" alt="Plato de gnocchi de papa">
+        <p>
+            Los gnocchi de papa son un tipo de pasta italiana hecha a base de papas. Suaves y tiernos, estos pequeños dumplings son perfectos para salsas ricas y robustas, ofreciendo una cena reconfortante que encanta a grandes y pequeños.
+        </p>
+    </section>
+    </main>
+    <footer>
+      <section class="u-center">
+        <p>
+          Pagina web hecha por
+          <strong>Jorge Omar Torres Sosa - 1270900</strong> para
+          <strong> Aplicaciones Web</strong>
+        </p>
+        <div>
+          <a
+            href="https://www.linkedin.com/in/egrojtorrez/"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            <img src="/img/linkedin.svg" alt="linkedin-logo" />
+          </a>
+          <a
+            href="https://github.com/egrojtorrez"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            <img src="/img/github.svg" alt="github-logo" />
+          </a>
+          <a
+            href="https://www.instagram.com/egrojtorrez/"
+            target="_blank"
+            rel="noopener nofollow"
+            aria-label="Sígueme en Instagram"
+          >
+            <img src="/img/insta.svg" alt="logo-insta" />
+          </a>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
+
+<script>
+  window.navigation.addEventListener('navigate', (e) => {
+    const toUrl = new URL(e.destination.url)
+    console.log(toUrl)
+    if (location.origin !== toUrl.origin) return
+    event.intercept({
+      async handler () {
+        const response = await fetch(toUrl.pathname)
+        const text = await response.text()
+        const data = text.match(/<body>([\s\S]*)<\/body>/)[1]
+        
+        document.startViewTransition(() => {
+          document.body.innerHTML = data
+          document.documentElement.scrollTop = 0
+        })
+      }
+    })
+  })
+</script>

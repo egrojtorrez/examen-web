@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="view-transition" content="same-origin">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://kit.fontawesome.com/457a315592.js" crossorigin="anonymous"> </script>
+    <title>egrojtorrez</title>
+  </head>
+  <body>
+    <header class="mb-4 header">
+      <div class="header-inner u-center">
+        <a id="logo" href="/"> 
+          <img id="logo-letras" src="/img/egrojtorrezlogo.png" alt="logo" /> 
+          <img id="logo-small" src="/img/logoSinLetras.png" alt="logo" /> 
+        </a>
+        <nav id="nav">
+          <a
+          href="/proyectos.html"
+          >
+            Proyectos
+          </a>
+          <a
+          href="/"
+          >
+            About Me
+          </a>
+          <a
+          href="/blog.html"
+          >
+            Blog
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main class="body u-center">
+      <h1>Japón: Un Modelo de Comida Saludable</h1>
+      <section class="blog-section">
+        <h2>Principios de la Dieta Japonesa</h2>
+        <img src="/img/japanese-food.jpg" alt="Variedad de platos tradicionales japoneses">
+        <p>
+            La dieta japonesa es célebre por su enfoque en alimentos frescos, porciones controladas y una mezcla equilibrada de ingredientes. Pescados ricos en Omega-3, vegetales frescos, arroz y productos de soja forman la base de esta dieta nutritiva y baja en grasas saturadas.
+        </p>
+    </section>
+
+    <section class="blog-section">
+        <h2>Impacto en la Salud</h2>
+        <p>
+            Estudios muestran que la dieta japonesa contribuye a una de las esperanzas de vida más altas en el mundo. Los hábitos alimenticios en Japón están asociados con tasas más bajas de obesidad y enfermedades crónicas como enfermedades cardíacas y diabetes tipo 2.
+        </p>
+    </section>
+
+    <section class="blog-section">
+        <h2>Platos Representativos</h2>
+        <img src="/img/te-matcha.jpg" alt="Taza de té matcha espumoso">
+        <p>
+            Algunos de los platos más saludables y populares incluyen el <strong>sushi</strong>, el <strong>sashimi</strong> y el <strong>natto</strong>. Además, el <strong>matcha</strong>, un tipo de té verde, es altamente valorado por sus antioxidantes, mostrando el énfasis en bebidas saludables complementarias a las comidas.
+        </p>
+    </section>
+    </main>
+    <footer>
+      <section class="u-center">
+        <p>
+          Pagina web hecha por
+          <strong>Jorge Omar Torres Sosa - 1270900</strong> para
+          <strong> Aplicaciones Web</strong>
+        </p>
+        <div>
+          <a
+            href="https://www.linkedin.com/in/egrojtorrez/"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            <img src="/img/linkedin.svg" alt="linkedin-logo" />
+          </a>
+          <a
+            href="https://github.com/egrojtorrez"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            <img src="/img/github.svg" alt="github-logo" />
+          </a>
+          <a
+            href="https://www.instagram.com/egrojtorrez/"
+            target="_blank"
+            rel="noopener nofollow"
+            aria-label="Sígueme en Instagram"
+          >
+            <img src="/img/insta.svg" alt="logo-insta" />
+          </a>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
+
+<script>
+  window.navigation.addEventListener('navigate', (e) => {
+    const toUrl = new URL(e.destination.url)
+    console.log(toUrl)
+    if (location.origin !== toUrl.origin) return
+    event.intercept({
+      async handler () {
+        const response = await fetch(toUrl.pathname)
+        const text = await response.text()
+        const data = text.match(/<body>([\s\S]*)<\/body>/)[1]
+        
+        document.startViewTransition(() => {
+          document.body.innerHTML = data
+          document.documentElement.scrollTop = 0
+        })
+      }
+    })
+  })
+</script>

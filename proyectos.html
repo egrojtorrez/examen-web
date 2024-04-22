@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="view-transition" content="same-origin">
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://kit.fontawesome.com/457a315592.js" crossorigin="anonymous"> </script>
+    <title>egrojtorrez</title>
+  </head>
+  <body>
+    <header class="mb-4 header">
+        <div class="header-inner u-center">
+          <a id="logo" href="/"> 
+            <img id="logo-letras" src="img/egrojtorrezlogo.png" alt="logo" /> 
+            <img id="logo-small" src="img/logoSinLetras.png" alt="logo" /> 
+          </a>
+          <nav id="nav">
+            <a
+            href="/proyectos.html"
+            >
+              Proyectos
+            </a>
+            <a
+            href="/"
+            >
+              About Me
+            </a>
+            <a
+            href="/blog.html"
+            >
+              Blog
+            </a>
+          </nav>
+        </div>
+      </header>
+    <main class="body u-center">
+        <div class="projects-container">
+            <ul class="projects-list">
+              <li class="project">
+                <h3>Sistema de gestion de psicopedagia</h3>
+                <p>
+                    Se desarrollo un programa para la gestion de expedientes psicopedagogicos para la UABC, el desarrollo contemplo una API REST hecha en NodeJS con Express
+                    y una base de datos en PostgreSQL.
+                    Tambien se desarrollo una aplicacion web en ReactJS para la gestion de los expedientes.
+                </p>
+                <!-- <a href="https://github.com/username/proyecto1" target="_blank">Ver en GitHub</a> -->
+                <p> <strong> No disponible el repositorio</strong> </p>
+              </li>
+              <li class="project">
+                <h3>API REST para punto de venta</h3>
+                <p>Se desarrollo una api rest para llevar el control de un punto de venta de una panaderial. El proyecto fue 
+                    desarrollado en Node.js y Express.js, se utilizo una base de datos en MySQL y se implemento el uso de JWT para la autenticacion de los usuarios.
+                </p>
+                <a href="https://github.com/IngenieeriaProcesosPan/BackendPan" target="_blank">Ver en GitHub</a>
+              </li>
+              <li class="project">
+                <h3>Pagina de Panaderia</h3>
+                <p>Se desarrollo la pagina para llevar el control de caja e inventario. La pagina fue desarrollada en React JS con Vite</p>
+                <a href="https://github.com/IngenieeriaProcesosPan/FrontenCoreUi" target="_blank">Ver en GitHub</a>
+              </li>
+              <li class="project">
+                <h3>DREADZONE</h3>
+                <p>Colaboracion de un videjuego realizado en C++ con SDL, el juego consta de una generacion interminable de enemigos con el objetivo de 
+                    sobrevivir el mayor tiempo posible.
+                </p>
+                <a href="https://github.com/DiegoAndresGlez/DREADZONE" target="_blank">Ver en GitHub</a>
+              </li>
+              <li class="project">
+                <h3>Api REST BASE </h3>
+                <p>Base de una api rest con typescript, tiene la configuracion basica de express, typescript, docker, y un flujo de CI/CD con github actions
+                    para poder empezar a crear las rutas, controladores y modelos necesarios para el proyecto.
+                </p>
+                <a href="https://github.com/egrojtorrez/api-types" target="_blank">Ver en GitHub</a>
+              </li>
+              <li class="project">
+                <h3>SICCO</h3>
+                <p>
+                    Una aplicacion de tienda en linea desarrollada en C# con WPForms.
+                </p>
+                <a href="https://github.com/egrojtorrez/SICCO" target="_blank">Ver en GitHub</a>
+              </li>
+            </ul>
+          </div>          
+    </main>
+    <footer>
+      <section class="u-center">
+        <p>
+          Pagina web hecha por
+          <strong>Jorge Omar Torres Sosa - 1270900</strong> para
+          <strong> Aplicaciones Web</strong>
+        </p>
+        <div>
+          <a
+            href="https://www.linkedin.com/in/egrojtorrez/"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            <img src="img/linkedin.svg" alt="linkedin-logo" />
+          </a>
+          <a
+            href="https://github.com/egrojtorrez"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            <img src="img/github.svg" alt="github-logo" />
+          </a>
+          <a
+            href="https://www.instagram.com/egrojtorrez/"
+            target="_blank"
+            rel="noopener nofollow"
+            aria-label="Sígueme en Instagram"
+          >
+            <img src="img/insta.svg" alt="logo-insta" />
+          </a>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
+
+<script>
+  window.navigation.addEventListener('navigate', (e) => {
+    const toUrl = new URL(e.destination.url)
+    console.log(toUrl)
+    if (location.origin !== toUrl.origin) return
+    event.intercept({
+      async handler () {
+        const response = await fetch(toUrl.pathname)
+        const text = await response.text()
+        const data = text.match(/<body>([\s\S]*)<\/body>/)[1]
+        
+        document.startViewTransition(() => {
+          document.body.innerHTML = data
+          document.documentElement.scrollTop = 0
+        })
+      }
+    })
+  })
+</script>
