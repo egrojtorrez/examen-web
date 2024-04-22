@@ -284,14 +284,6 @@ footer a:hover {
         flex-basis: 100%; 
     }
 }
-/* .habilidad .iconos{
-    line-height: 2;
-    height: 5rem;
-    width: 5rem;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-} */
 
 @media (min-width: 768px){
     .habilidades {
