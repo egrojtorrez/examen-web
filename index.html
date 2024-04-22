@@ -95,7 +95,6 @@
             rel="noopener nofollow"
           >
             <img src="img/github.svg" alt="github-logo" />
-            <img src="img/github.svg" alt="github-logo" />
           </a>
           <a
             href="https://www.instagram.com/egrojtorrez/"
@@ -104,7 +103,6 @@
             aria-label="Sígueme en Instagram"
           >
             <img src="img/insta.svg" alt="logo-insta" />
-            <img src="img/insta.svg" alt="logo-insta" />
           </a>
         </div>
       </section>
@@ -112,22 +110,3 @@
   </body>
 </html>
 
-<script>
-  window.navigation.addEventListener('navigate', (e) => {
-    const toUrl = new URL(e.destination.url)
-    console.log(toUrl)
-    if (location.origin !== toUrl.origin) return
-    event.intercept({
-      async handler () {
-        const response = await fetch(toUrl.pathname)
-        const text = await response.text()
-        const data = text.match(/<body>([\s\S]*)<\/body>/)[1]
-        
-        document.startViewTransition(() => {
-          document.body.innerHTML = data
-          document.documentElement.scrollTop = 0
-        })
-      }
-    })
-  })
-</script>
